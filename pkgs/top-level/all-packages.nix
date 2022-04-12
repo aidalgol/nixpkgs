@@ -18767,6 +18767,8 @@ with pkgs;
 
   libsvm = callPackage ../development/libraries/libsvm { };
 
+  libsocketcan = callPackage ../os-specific/linux/libsocketcan { };
+
   libtar = callPackage ../development/libraries/libtar { };
 
   libtasn1 = callPackage ../development/libraries/libtasn1 { };
