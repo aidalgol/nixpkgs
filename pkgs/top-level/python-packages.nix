@@ -10386,6 +10386,8 @@ in {
 
   tensorrt = callPackage ../development/python-modules/tensorrt { };
 
+  torch-tensorrt = callPackage ../development/python-modules/torch-tensorrt { };
+
   tellduslive = callPackage ../development/python-modules/tellduslive { };
 
   termcolor = callPackage ../development/python-modules/termcolor { };
