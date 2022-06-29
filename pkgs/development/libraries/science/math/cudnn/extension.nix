@@ -81,6 +81,22 @@ final: prev: let
         supportedCudaVersions = [ "11.2" ];
       }
     ];
+    "8.2.1" = [
+      rec {
+        fileVersion = "10.2";
+        fullVersion = "8.2.1.32";
+        hash = "sha256-/WMh/zvOTODLM0LlvTjJbc87Bz1E0ICJYnEcUYttYeI=";
+        url = "${urlPrefix}/v${majorMinorPatch fullVersion}/cudnn-${fileVersion}-linux-x64-v${fullVersion}.tgz";
+        supportedCudaVersions = [ "10.2" ];
+      }
+      rec {
+        fileVersion = "11.3";
+        fullVersion = "8.2.1.32";
+        hash = "sha256-OUEqzZ713SeVS2ufXfdb04HF1863l5r2x0On9FIfnHc=";
+        url = "${urlPrefix}/v${majorMinorPatch fullVersion}/cudnn-${fileVersion}-linux-x64-v${fullVersion}.tgz";
+        supportedCudaVersions = [ "11.3" ];
+      }
+    ];
     "8.3.2" = [
       rec {
         fileVersion = "10.2";
