@@ -46,6 +46,24 @@ final: prev: let
         supportedCudaVersions = [ "10.2" ];
       }
     ];
+    "8.2.4" = [
+      rec {
+        fileVersionCuda = "11.4";
+        fileVersionCudnn = "8.2";
+        fullVersion = "8.2.4.2";
+        sha256 = "sha256-gmGA6q7N+afnYRaFW58fNADqmwbmawaj9qB0e6b4Y60=";
+        tarball = "TensorRT-${fullVersion}.Linux.x86_64-gnu.cuda-${fileVersionCuda}.cudnn${fileVersionCudnn}.tar.gz";
+        supportedCudaVersions = [ "11.0" "11.1" "11.2" "11.3" "11.4" "11.5" ];
+      }
+      rec {
+        fileVersionCuda = "10.2";
+        fileVersionCudnn = "8.2";
+        fullVersion = "8.2.4.2";
+        sha256 = "sha256-wx7C51Icbl9gxVGDVC3RBYGiF8GJ/0leUb2679m7EC8=";
+        tarball = "TensorRT-${fullVersion}.Linux.x86_64-gnu.cuda-${fileVersionCuda}.cudnn${fileVersionCudnn}.tar.gz";
+        supportedCudaVersions = [ "10.2" ];
+      }
+    ];
   };
 
   # Default attributes
