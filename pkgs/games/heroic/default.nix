@@ -1,7 +1,7 @@
 { lib, fetchurl, appimageTools }:
 
 let
-  pname = "heroic";
+  pname = "heroic-original";
   version = "2.2.6";
   name = "${pname}-${version}";
   src = fetchurl {
@@ -33,7 +33,7 @@ appimageTools.wrapType2 {
     description = "A Native GUI Epic Games Launcher for Linux, Windows and Mac";
     homepage = "https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ wolfangaukang ];
+    maintainers = with maintainers; [ wolfangaukang aidalgol ];
     platforms = [ "x86_64-linux" ];
   };
 }
