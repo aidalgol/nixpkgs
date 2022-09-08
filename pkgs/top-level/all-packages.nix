@@ -709,6 +709,8 @@ with pkgs;
 
   prefer-remote-fetch = import ../build-support/prefer-remote-fetch;
 
+  geogram = callPackage ../development/libraries/geogram { };
+
   global-platform-pro = callPackage ../development/tools/global-platform-pro { };
 
   gomi = callPackage ../tools/misc/gomi { };
