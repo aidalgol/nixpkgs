@@ -222,6 +222,8 @@ with pkgs;
 
   alda = callPackage ../development/interpreters/alda { };
 
+  alicevision = callPackage ../development/libraries/alicevision { };
+
   align = callPackage ../tools/text/align { };
 
   althttpd = callPackage ../servers/althttpd { };
@@ -29338,6 +29340,8 @@ with pkgs;
   meshcentral = callPackage ../tools/admin/meshcentral { };
 
   meshlab = libsForQt5.callPackage ../applications/graphics/meshlab { };
+
+  meshroom = callPackage ../applications/misc/meshroom { };
 
   metadata-cleaner = callPackage ../applications/misc/metadata-cleaner { };
 
