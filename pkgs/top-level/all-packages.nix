@@ -36805,6 +36805,8 @@ with pkgs;
 
   pxview = callPackage ../development/tools/pxview {};
 
+  uncertainty-te = libsForQt5.callPackage ../development/libraries/uncertainty-te { };
+
   unstick = callPackage ../os-specific/linux/unstick {};
 
   quartus-prime-lite = callPackage ../applications/editors/quartus-prime {};
