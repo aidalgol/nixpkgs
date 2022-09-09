@@ -12,26 +12,19 @@ stdenv.mkDerivation rec
     sha256 = "sha256-QnqUD8KmMDmEZ1REoKN70SwVICOdyGPZsB/lU9nojj4=";
   };
 
-  outputs = [ "bin" "dev" "out" "lib" ];
+  outputs = [ "bin" "dev" "out" ];
 
   nativeBuildInputs = [ unzip cmake ];
   buildInputs = [ openexr hdf5-threadsafe ];
 
-  buildPhase = ''
-    cmake -DUSE_HDF5=ON -DCMAKE_INSTALL_PREFIX=$out/ -DUSE_TESTS=OFF .
+  cmakeFlags = [
+    "-DUSE_HDF5=ON"
+    "-DUSE_TESTS=OFF"
+    "-DALEMBIC_LIB_INSTALL_DIR=${placeholder "out"}/lib"
+  ];
 
-    mkdir $out
-    mkdir -p $bin/bin
-    mkdir -p $dev/include
-    mkdir -p $lib/lib
-  '';
-
-  installPhase = ''
-    make install
-
-    mv $out/bin $bin/
-    mv $out/lib $lib/
-    mv $out/include $dev/
+  postInstall = ''
+    moveToOutput bin $bin
   '';
 
   meta = with lib; {
