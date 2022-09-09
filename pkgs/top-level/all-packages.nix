@@ -314,6 +314,8 @@ with pkgs;
 
   cbfmt = callPackage ../development/tools/cbfmt { };
 
+  cctag = callPackage ../development/libraries/cctag { };
+
   cfn-nag = callPackage ../development/tools/cfn-nag { };
 
   cxx-rs = callPackage ../development/libraries/cxx-rs { };
