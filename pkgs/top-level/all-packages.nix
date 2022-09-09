@@ -1562,6 +1562,11 @@ with pkgs;
 
   pcsxr = callPackage ../applications/emulators/pcsxr { };
 
+  popsift = callPackage ../development/libraries/popsift {
+    # Does not build with CUDA SDK 11.
+    cudatoolkit = cudaPackages_10.cudatoolkit;
+  };
+
   ppsspp = callPackage ../applications/emulators/ppsspp { };
 
   ppsspp-sdl = ppsspp;
