@@ -23126,6 +23126,8 @@ with pkgs;
 
   yojimbo = callPackage ../development/libraries/yojimbo { };
 
+  yubioath-flutter = callPackage ../applications/misc/yubioath-flutter { };
+
   yubico-pam = callPackage ../development/libraries/yubico-pam { };
 
   yubico-piv-tool = callPackage ../tools/misc/yubico-piv-tool {
