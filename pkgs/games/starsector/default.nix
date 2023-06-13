@@ -1,18 +1,14 @@
 { lib
 , fetchzip
-, libXxf86vm
-, makeWrapper
-, openal
-, openjdk
 , stdenv
-, xorg
+, openjdk
 , copyDesktopItems
 , makeDesktopItem
 , writeScript
 }:
 
 stdenv.mkDerivation rec {
-  pname = "starsector";
+  pname = "starsector-unwrapped";
   version = "0.96a-RC8";
 
   src = fetchzip {
@@ -20,8 +16,7 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-RDXqFqiWpBG3kasofzbOl7Zp0a9LiMpJKsHcFaJtm2Y=";
   };
 
-  nativeBuildInputs = [ copyDesktopItems makeWrapper ];
-  buildInputs = [ xorg.libXxf86vm openal ];
+  nativeBuildInputs = [ copyDesktopItems ];
 
   dontBuild = true;
 
@@ -48,13 +43,6 @@ stdenv.mkDerivation rec {
 
     mkdir -p $out/share/icons/hicolor/64x64/apps
     ln -s $out/graphics/ui/s_icon64.png $out/share/icons/hicolor/64x64/apps/starsector.png
-
-    wrapProgram $out/share/starsector/starsector.sh \
-      --prefix PATH : ${lib.makeBinPath [ openjdk ]} \
-      --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath buildInputs} \
-      --run 'mkdir -p ''${XDG_DATA_HOME:-~/.local/share}/starsector' \
-      --chdir "$out/share/starsector"
-    ln -s $out/share/starsector/starsector.sh $out/bin/starsector
 
     runHook postInstall
   '';

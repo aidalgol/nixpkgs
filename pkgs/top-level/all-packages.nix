@@ -37113,8 +37113,12 @@ with pkgs;
     inherit (darwin.apple_sdk.frameworks) Cocoa;
   };
 
-  starsector = callPackage ../games/starsector {
-    openjdk = openjdk8;
+  starsector-unwrapped = callPackage ../games/starsector {
+     openjdk = openjdk8;
+  };
+
+  starsector = callPackage ../games/starsector/wrapper.nix {
+     openjdk = openjdk8;
   };
 
   sauerbraten = callPackage ../games/sauerbraten { };
