@@ -13846,6 +13846,8 @@ self: super: with self; {
 
   shellescape = callPackage ../development/python-modules/shellescape { };
 
+  shxparser = callPackage ../development/python-modules/shxparser { };
+
   shellingham = callPackage ../development/python-modules/shellingham { };
 
   shiboken2 = toPythonModule (callPackage ../development/python-modules/shiboken2 {
