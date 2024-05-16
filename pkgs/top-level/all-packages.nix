@@ -326,6 +326,8 @@ with pkgs;
 
   banana-accounting = callPackage ../applications/office/banana-accounting { };
 
+  bcnc = python3Packages.callPackage ../by-name/bc/bcnc { };
+
   beebeep = libsForQt5.callPackage ../applications/office/beebeep { };
 
   beeper = callPackage ../applications/networking/instant-messengers/beeper { };
